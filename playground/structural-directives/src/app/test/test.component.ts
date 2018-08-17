@@ -1,48 +1,26 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { EmployeeService } from '../employee.service';
 
 @Component({
-  selector: 'app-test',
+  selector: 'employee-list',
   template: `
-    <h2 *ngIf = "displayname; else elseBlock">
-      Palash's-World
-    </h2>
-
-    <ng-template #elseBlock>
-      <h2>
-        Name hidden
-      </h2>
-    </ng-template>
-
-    <div [ngSwitch] = "color">
-      <div *ngSwitchCase = "'red'"> You picked red</div>
-      <div *ngSwitchCase = "'blue'"> You picked blue</div>
-      <div *ngSwitchCase = "'green'"> You picked green</div>
-      <div *ngSwitchDefault> Wrong</div>
-    </div>
-
-    <div *ngFor="let col of colors; odd as i">
-      <h2>{{i}} {{col}}</h2>
-    </div>
-
-    <h2>{{"Hello " + parentData}}</h2>
-    <button (click)= "fireEvent()">send to parent</button>
+  <h2>Employee List</h2>
+  <h3>{{errorMsg}}</h3>
+  <ul *ngFor="let employee of employees">
+    <li>{{employee.name}}</li>
+  </ul>
   `,
   styles: []
 })
 export class TestComponent implements OnInit {
-  @Input() public parentData;
-  @Output() public childEvent = new EventEmitter();
-
-  public fireEvent(){
-    this.childEvent.emit('hey parent');
-  }
-
-  displayname = false;
-  public color = "red";
-  public colors = ["red", "blue", "green", "yellow"];
-  constructor() { }
+  public employees = []
+  public errorMsg;
+  constructor(private _employeeService: EmployeeService) { }
 
   ngOnInit() {
+    this._employeeService.getEmployees()
+    .subscribe(data => this.employees = data,
+               error => this.errorMsg = error);
   }
 
 }
