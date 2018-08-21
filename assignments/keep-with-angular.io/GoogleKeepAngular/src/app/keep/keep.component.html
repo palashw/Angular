@@ -1,0 +1,9 @@
+<h2> My Keeps </h2>
+<ul class="heroes">
+  <li *ngFor="let a of keep" [class.selected]="a === selectedKeep" (click)="onSelect(a)">
+    <span class="badge"> {{a.keepID}} </span>{{a.title}}
+  </li>
+</ul>
+<app-keep-detail [keep]="selectedKeep"></app-keep-detail>
+
+
