@@ -1,9 +1,9 @@
 <h2> My Keeps </h2>
 <ul class="heroes">
-  <li *ngFor="let a of keep" [class.selected]="a === selectedKeep" (click)="onSelect(a)">
-    <span class="badge"> {{a.keepID}} </span>{{a.title}}
+  <li *ngFor="let a of keep">
+    <a routerLink="/details/{{a.keepID}}">
+      <span class="badge"> {{a.keepID}} </span>{{a.title}}
+    </a>
   </li>
 </ul>
-<app-keep-detail [keep]="selectedKeep"></app-keep-detail>
-
-
+<!--the [kee] receives the selected keep and passes it to the keep details as keep in @input-->

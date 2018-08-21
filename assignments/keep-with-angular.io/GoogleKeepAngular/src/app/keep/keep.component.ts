@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { KeepClass } from '../keepClass';
 import { KEEPS } from '../mock-keeps';
+import { KeepService } from '../keep.service';
 
 @Component({
   selector: 'app-keep',
@@ -9,17 +10,21 @@ import { KEEPS } from '../mock-keeps';
 })
 export class KeepComponent implements OnInit {
 
-  constructor() { }
+  constructor(private keepService: KeepService) { }
 
   ngOnInit() {
+    this.getKeeps();
   }
 
-  keep = KEEPS;
+  keep: KeepClass[];
 
-  selectedKeep : KeepClass;
+  selectedKeep: KeepClass;
 
-  onSelect(keep: KeepClass): void{
+  onSelect(keep: KeepClass): void {
     this.selectedKeep = keep;
   }
 
+  getKeeps(): void {
+    this.keepService.getKeeps().subscribe(keep => this.keep = keep);
+  }
 }

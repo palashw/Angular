@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { KeepClass } from '../keepClass';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { KeepService }  from '../keep.service';
 
 @Component({
   selector: 'app-keep-detail',
@@ -8,11 +12,25 @@ import { KeepClass } from '../keepClass';
 })
 export class KeepDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+    private keepService: KeepService,
+    private location: Location) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getKeep();
+  }
+
+  getKeep(): void {
+    const keepID = +this.route.snapshot.paramMap.get('keepID');
+    this.keepService.getKeep(keepID).subscribe(keep => this.keep = keep);
   }
 
   @Input() keep: KeepClass;
+  // this is the link betn keepcomponent and keepdetail.
+  // the selectedkeep from keepcomponent is assigned here to keep
+
+  goBack(): void {
+    this.location.back();
+  }
 
 }

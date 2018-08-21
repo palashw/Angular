@@ -24,5 +24,29 @@ export const KEEPS: KeepClass[] = [
     checklist: ["f", "g"],
     label: "test1",
     ispinned: false
+  },
+  {
+    keepID: 4,
+    title: "Note4",
+    plainText: "jajajaja",
+    checklist: ["h", "i"],
+    label: "test1",
+    ispinned: true
+  },
+  {
+    keepID: 5,
+    title: "Note5",
+    plainText: "jijiji",
+    checklist: ["j", "k"],
+    label: "test1",
+    ispinned: true
+  },
+  {
+    keepID: 6,
+    title: "Note6",
+    plainText: "jojojo",
+    checklist: ["l", "m"],
+    label: "test1",
+    ispinned: false
   }
 ]

@@ -1,7 +1,8 @@
 <div *ngIf="keep">
   <h2>{{keep.title | uppercase}} Details</h2>
-  <div><span>id: </span>{{keep.keepID}}</div>
-  <label>name:
+  <div><span>keepID: </span>{{keep.keepID}}</div>
+  <label>Title:
     <input [(ngModel)]="keep.title" placeholder="title">
   </label>
 </div>
+<button (click)="goBack()">go back</button>
