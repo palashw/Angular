@@ -32,4 +32,6 @@ export class KeepComponent implements OnInit {
     this.keep = this.keep.filter(h => h !== keep);
     this.keepService.deleteKeep(keep).subscribe();
   }
+
+
 }

@@ -1,0 +1,13 @@
+<div id="search-component">
+    <h4>Keep Search</h4>
+
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="enter title"/>
+
+    <ul class="search-result">
+      <li *ngFor="let keep of keeps$ | async" >
+        <a routerLink="/details/{{keep.id}}">
+          {{keep.title}}
+        </a>
+      </li>
+    </ul>
+  </div>

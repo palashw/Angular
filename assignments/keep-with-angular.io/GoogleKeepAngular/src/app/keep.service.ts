@@ -35,7 +35,6 @@ export class KeepService {
   }
 
   getKeep(id: string): Observable<KeepClass> {
-    console.log(id);
     const url = `${this.keepsUrl}/${id}`;
     return this.http.get<KeepClass>(url).pipe(
       tap(_ => this.log(`fetched hero id=${id}`)),
@@ -73,6 +72,26 @@ export class KeepService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
+  }
+
+  addKeep (keep: KeepClass): Observable<KeepClass> {
+    return this.http.post<KeepClass>(this.keepsUrl, keep, httpOptions).pipe(
+      tap((keep: KeepClass) => this.log(`added keep w/ id=${keep.id}`)),
+      catchError(this.handleError<KeepClass>('addHero'))
+    );
+  }
+
+  searchKeeps(term: string): Observable<KeepClass[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    const url = `${this.keepsUrl}/title/${term}`;
+    console.log(url);
+    return this.http.get<KeepClass[]>(url).pipe(
+      tap(_ => this.log(`found keeps matching "${term}"`)),
+      catchError(this.handleError<KeepClass[]>('searchKeeps', []))
+    );
   }
 
 }

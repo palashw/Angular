@@ -1,4 +1,13 @@
 <h2> My Keeps </h2>
+
+<div>
+  <button routerLink = "/keep/add">
+    Add Keep
+  </button>
+</div>
+
+<app-keep-search></app-keep-search>
+
 <ul class="heroes">
   <li *ngFor="let a of keep">
     <a routerLink="/details/{{a.id}}">

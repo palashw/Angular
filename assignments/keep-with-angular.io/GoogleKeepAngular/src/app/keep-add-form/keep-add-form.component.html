@@ -1,0 +1,21 @@
+<label>Title:
+    <input [(ngModel)]="keepToAdd.title" placeholder="title">
+  </label>
+  <label>keepID:
+    <input [(ngModel)]="keepToAdd.keepID" placeholder="keepID">
+  </label>
+  <label>plainText:
+    <input [(ngModel)]="keepToAdd.plainText" placeholder="plainText">
+  </label>
+  <label>label:
+    <input [(ngModel)]="keepToAdd.label" placeholder="label">
+  </label>
+  <label>ispinned:
+    <input [(ngModel)]="keepToAdd.ispinned" placeholder="ispinned">
+  </label>
+  <label>checklist:
+    <li *ngFor="let a of keepToAdd.checklist">
+      <input [(ngModel)]="a.item" placeholder="item">
+    </li>
+  </label>
+  <button (click) = "add(keepToAdd)">Add</button>
