@@ -1,8 +1,26 @@
 <div *ngIf="keep">
   <h2>{{keep.title | uppercase}} Details</h2>
-  <div><span>keepID: </span>{{keep.keepID}}</div>
+  <div><span>id: </span>{{keep.id}}</div>
   <label>Title:
     <input [(ngModel)]="keep.title" placeholder="title">
   </label>
+  <label>keepID:
+    <input [(ngModel)]="keep.keepID" placeholder="keepID">
+  </label>
+  <label>plainText:
+    <input [(ngModel)]="keep.plainText" placeholder="plainText">
+  </label>
+  <label>label:
+    <input [(ngModel)]="keep.label" placeholder="label">
+  </label>
+  <label>ispinned:
+    <input [(ngModel)]="keep.ispinned" placeholder="ispinned">
+  </label>
+  <label>checklist:
+    <li *ngFor="let a of keep.checklist">
+      <input [(ngModel)]="a.item" placeholder="checklistItem">
+    </li>
+  </label>
 </div>
 <button (click)="goBack()">go back</button>
+<button (click)="save()">save</button>

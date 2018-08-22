@@ -27,4 +27,9 @@ export class KeepComponent implements OnInit {
   getKeeps(): void {
     this.keepService.getKeeps().subscribe(keep => this.keep = keep);
   }
+
+  delete(keep: KeepClass): void {
+    this.keep = this.keep.filter(h => h !== keep);
+    this.keepService.deleteKeep(keep).subscribe();
+  }
 }

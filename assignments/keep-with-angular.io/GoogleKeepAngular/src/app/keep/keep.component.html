@@ -1,9 +1,10 @@
 <h2> My Keeps </h2>
 <ul class="heroes">
   <li *ngFor="let a of keep">
-    <a routerLink="/details/{{a.keepID}}">
+    <a routerLink="/details/{{a.id}}">
       <span class="badge"> {{a.keepID}} </span>{{a.title}}
     </a>
+    <button class="delete" title="delete keep" (click)="delete(a)">Delete</button>
   </li>
 </ul>
-<!--the [kee] receives the selected keep and passes it to the keep details as keep in @input-->
+<!--the [keep] receives the selected keep and passes it to the keep details as keep in @input-->

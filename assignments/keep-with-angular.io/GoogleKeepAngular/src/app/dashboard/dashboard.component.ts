@@ -18,6 +18,6 @@ export class DashboardComponent implements OnInit {
 
   getKeeps(): void {
     this.keepService.getKeeps()
-      .subscribe(keep => this.keeps = keep.slice(1, 5));
+      .subscribe(keep => this.keeps = keep.slice(0, 5));
   }
 }

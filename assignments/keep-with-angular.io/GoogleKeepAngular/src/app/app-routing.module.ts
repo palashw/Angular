@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: 'keeps', component: KeepComponent},
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'details/:keepID', component: KeepDetailComponent}
+  {path: 'details/:id', component: KeepDetailComponent}
 ]
 @NgModule({
   exports : [RouterModule],
