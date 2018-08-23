@@ -8,3 +8,8 @@
 .example-full-width {
   width: 100%;
 }
+
+button {
+  margin: 10px;
+  margin-bottom: 30px;
+}

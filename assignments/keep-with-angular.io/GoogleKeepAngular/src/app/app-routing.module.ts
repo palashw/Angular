@@ -7,7 +7,7 @@ import { KeepAddFormComponent } from './keep-add-form/keep-add-form.component';
 
 const routes: Routes = [
   {path: 'keeps', component: KeepComponent},
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/keeps', pathMatch: 'full' },
   {path: 'dashboard', component: DashboardComponent},
   {path: 'details/:id', component: KeepDetailComponent},
   {path: 'keep/add', component: KeepAddFormComponent}

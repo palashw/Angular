@@ -100,10 +100,8 @@
 }
 
 button {
+  margin-top: 10px;
   background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
   cursor: pointer;
   cursor: hand;
   font-family: Arial;
@@ -115,8 +113,6 @@ button:hover {
 
 button.delete {
   position: relative;
-  left: 194px;
-  top: -32px;
   background-color: gray !important;
   color: white;
 }
@@ -131,4 +127,12 @@ button.delete {
   margin-right: 0;
   align-content: center;
   position: static;
+}
+
+h2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+mat-card {
+  background: rgb(157, 180, 230);
 }

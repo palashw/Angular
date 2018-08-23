@@ -3,27 +3,32 @@
   border-bottom: 1px solid gray;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
+  margin: auto;
   width:195px;
   height: 16px;
   padding: 5px;
   background-color: white;
   cursor: pointer;
   list-style-type: none;
+  position: relative;
 }
 
 .search-result li:hover {
-  background-color: #607D8B;
+  background-color: rgb(74, 102, 180);
 }
 
 .search-result li a {
-  color: #888;
+  color: rgb(19, 17, 17);
   display: block;
   text-decoration: none;
   text-align: center;
+  align-content: center;
+  position: relative;
+  margin: auto;
 }
 
 .search-result li a:hover {
-  color: white;
+  color: rgb(20, 20, 20);
 }
 .search-result li a:active {
   color: white;
@@ -37,4 +42,12 @@
 ul.search-result {
   margin-top: 0;
   padding-left: 0;
+}
+
+h4{
+  font-family: Arial, Helvetica, sans-serif;
+  font-stretch: narrower;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }

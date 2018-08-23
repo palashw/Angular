@@ -28,32 +28,32 @@
 <form class="example-form">
   <div *ngIf="keep">
     <h2>{{keep.title | uppercase}} Details</h2>
-    <mat-form-field class="example-full-width">Title:
+    <mat-form-field class="example-full-width">
       <input [ngModelOptions]="{standalone: true}" matInput placeholder="title" [(ngModel)]="keep.title">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">KeepID:
+    <mat-form-field class="example-full-width">
       <input [ngModelOptions]="{standalone: true}" matInput placeholder="keepID" [(ngModel)]="keep.keepID">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">PlainText:
-      <input [ngModelOptions]="{standalone: true}" matInput placeholder="plainText" [(ngModel)]="keep.plainText">
+    <mat-form-field class="example-full-width">
+      <input [ngModelOptions]="{standalone: true}" fromControlName="abc" matInput placeholder="plainText" [(ngModel)]="keep.plainText">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">Label:
+    <mat-form-field class="example-full-width">
       <input [ngModelOptions]="{standalone: true}" matInput placeholder="label" [(ngModel)]="keep.label">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">IsPinned:
-      <input type="checkbox" [ngModelOptions]="{standalone: true}" matInput placeholder="ispinned" [(ngModel)]="keep.ispinned">
+    <mat-form-field class="example-full-width">
+      <input type="mat-checkbox"  [ngModelOptions]="{standalone: true}" matInput placeholder="ispinned" [(ngModel)]="keep.ispinned">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">CheckList:
+    <mat-form-field class="example-full-width">
       <li *ngFor="let a of keep.checklist">
         <input [ngModelOptions]="{standalone: true}" matInput placeholder="checklistItem" [(ngModel)]="a.item">
       </li>
     </mat-form-field>
   </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <button mat-fab color="primary" (click)="goBack()">Back</button>
+  <button mat-fab (click)="save()">Save</button>
 </form>

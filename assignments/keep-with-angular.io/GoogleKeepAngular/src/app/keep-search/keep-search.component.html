@@ -1,8 +1,6 @@
 <div id="search-component">
-    <h4>Keep Search</h4>
-
-    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="enter title"/>
-
+    <h4>Search a keep</h4>
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Enter title"/>
     <ul class="search-result">
       <li *ngFor="let keep of keeps$ | async" >
         <a routerLink="/details/{{keep.id}}">

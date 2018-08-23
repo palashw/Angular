@@ -23,15 +23,15 @@ export class KeepAddFormComponent implements OnInit {
     "checklist": [
         {
             "checklistID": 1,
-            "item": ""
+            "item": " "
         },
         {
             "checklistID": 2,
-            "item": ""
+            "item": " "
         },
         {
             "checklistID": 3,
-            "item": ""
+            "item": " "
         }
     ],
     "label": "",
