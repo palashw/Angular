@@ -120,3 +120,15 @@ button.delete {
   background-color: gray !important;
   color: white;
 }
+
+.example-card {
+  max-width: 400px;
+  margin : auto;
+}
+
+.keeplist {
+  margin-left: 0;
+  margin-right: 0;
+  align-content: center;
+  position: static;
+}

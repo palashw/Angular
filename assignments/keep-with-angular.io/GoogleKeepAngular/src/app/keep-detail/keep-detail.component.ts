@@ -22,6 +22,7 @@ export class KeepDetailComponent implements OnInit {
 
   getKeep(): void {
     const id = this.route.snapshot.paramMap.get('id');
+    console.log(id);
     this.keepService.getKeep(id).subscribe(keep => this.keep = keep);
   }
 

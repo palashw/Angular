@@ -1,4 +1,4 @@
-<div *ngIf="keep">
+<!-- <div *ngIf="keep">
   <h2>{{keep.title | uppercase}} Details</h2>
   <div><span>id: </span>{{keep.id}}</div>
   <label>Title:
@@ -23,4 +23,37 @@
   </label>
 </div>
 <button (click)="goBack()">go back</button>
-<button (click)="save()">save</button>
+<button (click)="save()">save</button> -->
+
+<form class="example-form">
+  <div *ngIf="keep">
+    <h2>{{keep.title | uppercase}} Details</h2>
+    <mat-form-field class="example-full-width">Title:
+      <input [ngModelOptions]="{standalone: true}" matInput placeholder="title" [(ngModel)]="keep.title">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">KeepID:
+      <input [ngModelOptions]="{standalone: true}" matInput placeholder="keepID" [(ngModel)]="keep.keepID">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">PlainText:
+      <input [ngModelOptions]="{standalone: true}" matInput placeholder="plainText" [(ngModel)]="keep.plainText">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">Label:
+      <input [ngModelOptions]="{standalone: true}" matInput placeholder="label" [(ngModel)]="keep.label">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">IsPinned:
+      <input type="checkbox" [ngModelOptions]="{standalone: true}" matInput placeholder="ispinned" [(ngModel)]="keep.ispinned">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">CheckList:
+      <li *ngFor="let a of keep.checklist">
+        <input [ngModelOptions]="{standalone: true}" matInput placeholder="checklistItem" [(ngModel)]="a.item">
+      </li>
+    </mat-form-field>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</form>

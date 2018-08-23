@@ -1,21 +1,57 @@
-<label>Title:
-    <input [(ngModel)]="keepToAdd.title" placeholder="title">
-  </label>
-  <label>keepID:
-    <input [(ngModel)]="keepToAdd.keepID" placeholder="keepID">
-  </label>
-  <label>plainText:
-    <input [(ngModel)]="keepToAdd.plainText" placeholder="plainText">
-  </label>
-  <label>label:
-    <input [(ngModel)]="keepToAdd.label" placeholder="label">
-  </label>
-  <label>ispinned:
-    <input [(ngModel)]="keepToAdd.ispinned" placeholder="ispinned">
-  </label>
-  <label>checklist:
+<!-- <label>Title:
+  <input [(ngModel)]="keepToAdd.title" placeholder="title">
+</label>
+<label>keepID:
+  <input [(ngModel)]="keepToAdd.keepID" placeholder="keepID">
+</label>
+<label>plainText:
+  <input [(ngModel)]="keepToAdd.plainText" placeholder="plainText">
+</label>
+<label>label:
+  <input [(ngModel)]="keepToAdd.label" placeholder="label">
+</label>
+<label>ispinned:
+  <input type="checkbox" [(ngModel)]="keepToAdd.ispinned" placeholder="ispinned">
+</label>
+<label>checklist:
+  <li *ngFor="let a of keepToAdd.checklist">
+    <input [(ngModel)]="a.item" placeholder="item">
+  </li>
+</label>
+<button (click)="add(keepToAdd)">Add</button> -->
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">Title:
+    <input [ngModelOptions]="{standalone: true}" matInput placeholder="title" [(ngModel)]="keepToAdd.title">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">KeepId:
+    <input [ngModelOptions]="{standalone: true}" matInput placeholder="keepID" [(ngModel)]="keepToAdd.keepID">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">plainText:
+    <input [ngModelOptions]="{standalone: true}" matInput placeholder="plainText" [(ngModel)]="keepToAdd.plainText">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">Label:
+    <input [ngModelOptions]="{standalone: true}" matInput placeholder="label" [(ngModel)]="keepToAdd.label">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">isPinned:
+    <input type="checkbox" [ngModelOptions]="{standalone: true}" matInput placeholder="ispinned" [(ngModel)]="keepToAdd.ispinned">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">CheckList:
     <li *ngFor="let a of keepToAdd.checklist">
-      <input [(ngModel)]="a.item" placeholder="item">
+      <input [ngModelOptions]="{standalone: true}" matInput placeholder="checklistItem" [(ngModel)]="a.item">
     </li>
-  </label>
-  <button (click) = "add(keepToAdd)">Add</button>
+  </mat-form-field>
+
+  <!-- <mat-selection-list #list [(ngModel)]="keepToAdd" (ngModelChange)="onNgModelChange($event)">
+      <mat-list-option *ngFor="let tta of keepToAdd.checklist">
+          {{tta.item}}
+      </mat-list-option>
+  </mat-selection-list> -->
+
+  <button (click)="add(keepToAdd)">Add</button>
+</form>

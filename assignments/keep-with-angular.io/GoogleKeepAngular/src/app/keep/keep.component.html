@@ -1,19 +1,36 @@
 <h2> My Keeps </h2>
 
 <div>
-  <button routerLink = "/keep/add">
+  <button routerLink="/keep/add">
     Add Keep
   </button>
 </div>
 
 <app-keep-search></app-keep-search>
 
-<ul class="heroes">
+<!-- <ul class="heroes">
   <li *ngFor="let a of keep">
     <a routerLink="/details/{{a.id}}">
       <span class="badge"> {{a.keepID}} </span>{{a.title}}
     </a>
     <button class="delete" title="delete keep" (click)="delete(a)">Delete</button>
   </li>
-</ul>
+</ul> -->
+
+<section *ngFor="let a of keep" class="keeplist">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{a.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p aria-placeholder="PlainText">
+        {{a.plainText}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="delete" title="delete keep" (click)="delete(a)">Delete</button>
+      <button mat-button routerLink="/details/{{a.id}}">Edit</button>
+    </mat-card-actions>
+  </mat-card>
+</section>
 <!--the [keep] receives the selected keep and passes it to the keep details as keep in @input-->
